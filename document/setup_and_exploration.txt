@@ -1,0 +1,77 @@
+AWS CLI Credential Automation Script
+---------------------------------------------------------------------------
+Script Name: setup_aws.sh
+
+Objective:
+This script automates the configuration of AWS CLI credentials and related 
+configuration files on a local system or EC2 instance.
+
+It eliminates the need for manual editing of AWS credential files and 
+ensures consistent setup across environments.
+
+What the Script Does:
+* Creates the ~/.aws directory (if it does not exist)
+* Generates the credentials file
+* Generates the config file
+* Sets default AWS region
+* Sets default output format
+* Simplifies AWS CLI setup process
+
+Script Implementation:
+---------------------------------------------------------------------------
+#!/bin/bash
+
+# Replace these with your IAM user's credentials
+AWS_ACCESS_KEY_ID="<add_your_aws_accesskey_here>"
+AWS_SECRET_ACCESS_KEY="<add_your_aws_secretkey_here>"
+AWS_DEFAULT_REGION="ap-south-1"
+AWS_OUTPUT_FORMAT="json"
+
+# Create AWS credentials directory if it doesn't exist
+mkdir -p ~/.aws
+
+# Write credentials file
+cat > ~/.aws/credentials <<EOL
+[default]
+aws_access_key_id = $AWS_ACCESS_KEY_ID
+aws_secret_access_key = $AWS_SECRET_ACCESS_KEY
+EOL
+
+# Write config file
+cat > ~/.aws/config <<EOL
+[default]
+region = $AWS_DEFAULT_REGION
+output = $AWS_OUTPUT_FORMAT
+EOL
+
+echo "AWS credentials and config files created successfully!"
+
+---------------------------------------------------------------------------
+How It Works:
+1. Stores IAM credentials in variables.
+2. Creates AWS configuration directory (~/.aws).
+3. Writes credentials into ~/.aws/credentials.
+4. Writes region and output format into ~/.aws/config.
+5. Confirms successful setup.
+
+Usage Instructions:
+Step 1: Open Terminal
+    Use: Linux / macOS Terminal/ Git Bash (Windows)/ WSL (Windows Subsystem for Linux)
+
+Step 2: Make Script Executable
+    chmod +x setup_aws.sh
+
+Step 3: Update Credentials
+    Edit the script and replace:
+    AWS_ACCESS_KEY_ID="YOUR_ACCESS_KEY"
+    AWS_SECRET_ACCESS_KEY="YOUR_SECRET_KEY"
+
+Step 4: Run Script
+    ./setup_aws.sh
+
+Step 5: Verify Configuration
+    aws sts get-caller-identity
+
+    If configured correctly, it will return:
+    AWS Account ID
+    IAM User ARN
