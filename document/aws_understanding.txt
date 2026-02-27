@@ -1,0 +1,73 @@
+Part 1: Cloud & AWS Understanding
+
+1. What cloud computing
+Ans: Cloud computing is the delivery of computing services such as servers, 
+    storage, databases, and software over the internet instead of using your
+    own physical hardware. Instead of buying and maintaining servers, 
+    businesses rent resources from cloud providers like Amazon Web Services 
+    and use them whenever needed
+
+    Advantages of Cloud Computing:
+    * Cost Effective – No need to buy expensive hardware pay only for what you use
+    * Scalable – Easily increase or decrease resources based on demand
+    * High Availability – Services run with minimal downtime
+    * Flexible Access – Access from anywhere with internet
+    * Automatic Updates – Cloud provider manages maintenance and upgrades
+    * Security – Built-in security features and data protection
+    * Backup & Recovery – Easy data backup and disaster recovery
+
+2. Differences between IaaS, PaaS, and SaaS
+Ans: 
+    IaaS (Infrastructure as a Service):
+    IaaS provides virtual servers, storage, and networking over the 
+    internet. The cloud provider manages hardware, while users manage the 
+    operating system, applications, and data. It offers high control and 
+    flexibility, similar to owning a data center without purchasing 
+    physical infrastructure
+
+    PaaS (Platform as a Service):
+    PaaS provides a ready platform for developing and deploying 
+    applications. The provider manages infrastructure and runtime, while 
+    users focus only on writing and managing code. It simplifies 
+    development, reduces server management, and speeds up 
+    application deployment
+
+    SaaS (Software as a Service):
+    SaaS delivers fully functional software over the internet. Users access
+    applications through a browser without installing or maintaining them. 
+    The provider manages everything including infrastructure, updates, and 
+    security. It is easy to use and ideal for everyday business applications
+
+3. Why AWS is used and common real-world use cases
+Ans: 
+    Why AWS is Used:
+    Amazon Web Services is used because it is scalable, reliable, secure, 
+    and cost-effective. It follows a pay-as-you-go model, meaning businesses
+    only pay for what they use. AWS also provides a wide range of services 
+    for computing, storage, databases, networking, and analytics, making it 
+    suitable for startups as well as large enterprises.
+
+    Common Real-World Use Cases of AWS:
+    * Website & Application Hosting 
+    * Data Storage & Backup 
+    * Big Data & Analytics 
+    * Disaster Recovery 
+    * Enterprise Applications 
+    * DevOps & CI/CD 
+    * AI & Machine Learning
+    * Content Delivery 
+
+4. Purpose of EC2 and S3 in a cloud architecture
+Ans: 
+    Purpose of EC2 in Cloud Architecture:
+    EC2 (Elastic Compute Cloud) is used to provide virtual servers in the 
+    cloud where applications, websites, APIs, or backend services run. It 
+    acts like a remote computer where you can install software, configure 
+    the operating system, and execute programs. EC2 handles the computing 
+    part of the architecture
+
+    Purpose of S3 in Cloud Architecture:
+    S3 (Simple Storage Service) is used to store and retrieve data such as 
+    files, images, videos, backups, and large datasets. It provides secure, 
+    scalable, and durable storage. In a cloud architecture, S3 handles the 
+    storage layer while EC2 handles processing or computation
