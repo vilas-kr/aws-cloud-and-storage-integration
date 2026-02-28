@@ -1,0 +1,5 @@
+document/AWS*
+.venv
+.env
+
+__pycache__
