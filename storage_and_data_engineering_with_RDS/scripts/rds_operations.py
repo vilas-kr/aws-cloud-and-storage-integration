@@ -56,9 +56,7 @@ try:
     logging.info('Table created successfully')
 except Exception as e:
     logging.error('Error occurred while creating table: %s', e)
-    raise e
-finally:
-    cursor.close()      
+    raise e      
 
 # -------------------------------------------------------------------------
 # 2. Insert records into RDS table
@@ -71,8 +69,6 @@ try:
 except Exception as e:
     logging.error('Error occurred while loading cleaned data: %s', e)
     raise e
-finally:
-    conn.close()
     
 logging.info('Inserting records into RDS table...')
 insert_query = '''
@@ -91,9 +87,7 @@ try:
 except Exception as e:
     logging.error('Error occurred while inserting records: %s', e)
     raise e
-finally:
-    cursor.close()
-    
+
 logging.info('Records inserted successfully')
 
 # -------------------------------------------------------------------------
@@ -111,8 +105,7 @@ try:
 except Exception as e:
     logging.error('Error occurred while reading and filtering records: %s', e)
     raise e
-finally:
-    cursor.close()
+
 
 # -------------------------------------------------------------------------
 # 4. Update selected records
@@ -130,8 +123,6 @@ try:
 except Exception as e:
     logging.error('Error occurred while updating records: %s', e)
     raise e
-finally:
-    cursor.close()
 
 # -------------------------------------------------------------------------
 # 5. Delete records based on conditions
@@ -148,8 +139,6 @@ try:
 except Exception as e:
     logging.error('Error occurred while deleting records: %s', e)
     raise e
-finally:
-    cursor.close()
 
 # Close the database connection
 conn.close()

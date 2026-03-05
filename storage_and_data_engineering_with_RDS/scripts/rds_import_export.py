@@ -40,9 +40,13 @@ INSERT INTO orders.sales (transaction_id, customer_id, product_name,
     category, region, quantity, price, total_amount, order_date)
 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
 '''
-cursor.executemany(insert_query, data.values.tolist())
-conn.commit()
-logging.info('Parquet data imported successfully')
+try:
+    cursor.executemany(insert_query, data.values.tolist())
+    conn.commit()
+    logging.info('Parquet data imported successfully')
+except Exception as e:
+    logging.error('Error occurred while importing Parquet data: %s', e)
+    raise e
 
 # -------------------------------------------------------------------------
 # 2. Export query results from RDS back to CSV
@@ -53,12 +57,16 @@ SELECT *
 FROM orders.sales
 WHERE order_date >= '2023-01-01' AND order_date < '2024-01-01';
 '''
-exported_df = pd.read_sql(export_query, conn)
+try:    
+    exported_df = pd.read_sql(export_query, conn)
 
-# Save exported data to CSV
-exported_df.to_csv('data/imported_sales_data.csv', index=False)
-logging.info('Query results exported to CSV successfully')
-
+    # Save exported data to CSV
+    exported_df.to_csv('data/imported_sales_data.csv', index=False)
+    logging.info('Query results exported to CSV successfully')
+    
+except Exception as e:
+    logging.error('Error occurred while exporting query results: %s', e)
+    raise e
 # -------------------------------------------------------------------------
 # Explaination
 # 3. Explain different methods for bulk import/export
