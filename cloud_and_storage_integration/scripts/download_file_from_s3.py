@@ -92,11 +92,12 @@ def list_files_in_s3_bucket(bucket_name):
         s3_client = boto3.client('s3')
         paginator = s3_client.get_paginator('list_objects_v2')
 
+        print(f'Files in bucket {bucket_name}:')
         found = False
         for page in paginator.paginate(Bucket=bucket_name):
             for obj in page.get('Contents', []):
                 found = True
-                print(f'{obj["Key"]} \t {obj["Size"]} bytes \t Last Modified: {obj["LastModified"]}')
+                print(f'- {obj["Key"]}  {obj["Size"]} bytes  Last Modified: {obj["LastModified"]}')
         
         if not found:
             print(f'Bucket is empty.')
