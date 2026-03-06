@@ -1,4 +1,6 @@
 boto3
 python-dotenv
 pandas
-s3fs
+s3fs>=2024.0.0
+pyarrow
+pyodbc
