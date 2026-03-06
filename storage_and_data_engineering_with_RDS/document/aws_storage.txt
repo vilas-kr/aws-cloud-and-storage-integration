@@ -1,0 +1,66 @@
+1. What a Data Lake is and How S3 Fits Into It.
+Ans: Data lake is a centralized repository for storing large amount of 
+    structured, semi-structured and unstructued data in it's raw form. 
+    
+    -> It doesn't need any predefined schema to store data.
+    Key Characteristics of Data lake:
+    1. Stores raw data before transformation
+    2. Supports multiple data formats (CSV, JSON, Parquet, images, logs)
+    3. Scales easily for large datasets
+    4. Enables advanced analytics, machine learning, and big data processing.
+
+    -> S3 fits into a Data Lake architecture because:
+    1. It provides highly scalable object storage
+    2. It supports various file formats
+    3. It is durable (99.999999999% durability)
+    4. It integrates easily with analytics tools like Spark, Athena, 
+        and Redshift
+        
+---------------------------------------------------------------------------
+
+2. Difference Between Data Lake vs Data Warehouse.
+Ans: A Data Lake stores raw data in its original format using 
+    schema-on-read, while a Data Warehouse stores processed and structured 
+    data using schema-on-write for optimized analytical queries.
+
+---------------------------------------------------------------------------
+
+3. Purpose and Use Cases of Amazon Glacier
+Ans: Amazon S3 Glacier is a low-cost storage service designed for long-term
+     data archiving and backup.
+
+    -> It is used for data that is:
+    * Rarely accessed
+    * Required for compliance or regulatory purposes
+    * Stored for long periods (years)
+
+    -> Common use cases:
+    * Backup and disaster recovery
+    * Compliance archives
+    * Historical data storage
+    * Media archives
+
+---------------------------------------------------------------------------
+
+4. What AWS RDS Is and When to Use It
+Ans: Amazon RDS is a managed service that allows users to run relational 
+    databases in the cloud without managing infrastructure.
+
+    -> RDS is typically used when:
+    * Applications require relational databases
+    * Structured queries are needed
+    * High availability and managed infrastructure are preferred
+
+---------------------------------------------------------------------------
+
+5. Difference Between Managed Databases (RDS) and Self-Managed Databases 
+    on EC2
+Ans: 
+    * In a Managed Database like Amazon RDS, AWS handles the infrastructure, 
+    maintenance, backups, patching, monitoring, and scaling, which reduces 
+    administrative overhead and ensures high availability.
+
+    * A Self-Managed database on Amazon EC2 gives full control over the 
+    database environment because you are responsible for installing, 
+    configuring, and maintaining the database on a virtual server.
+    
