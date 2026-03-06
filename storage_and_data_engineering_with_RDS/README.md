@@ -96,5 +96,7 @@ Execute the Python scripts to start the data ingestion and processing pipeline
 - Scalable cloud architecture
 
 ## Author
+```
 Name: Vilas K R
 GitHub: https://github.com/vilas-kr
+```
